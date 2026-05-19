@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sovereign Site Guard™ — Post-Event Intelligence for Remote Energy Sites</title>
+<meta name="description" content="Post-event video analysis for remote renewable energy sites. Off-cloud. No data leaves your site. Human makes every call. Signal over noise.">
+<link rel="canonical" href="https://sovereignsiteguard.com">
+<meta property="og:title" content="Sovereign Site Guard™">
+<meta property="og:description" content="The missing forensic layer for remote renewable energy sites. Post-event. Off-cloud. Human in the loop.">
+<meta property="og:url" content="https://sovereignsiteguard.com">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --field-dark: #0d0f0e;
+    --amber: #c8842a;
+    --bone: #e8e4dc;
+    --olive: #4a5240;
+    --muted: #7a7870;
+    --rule: rgba(200,132,42,0.3);
+  }
+  body { background: var(--field-dark); color: var(--bone); font-family: 'DM Mono', monospace; font-weight: 300; }
+  .wordmark { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.15em; font-size: 13px; color: var(--amber); }
+  nav { padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 0.5px solid var(--rule); }
+  nav a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 48px; gap: 48px; border-bottom: 0.5px solid var(--rule); }
+  .hero-text { padding: 64px 0; }
+  .signal-stamp { font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 0.28em; color: var(--amber); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .signal-stamp::before { content: ''; display: inline-block; width: 24px; height: 0.5px; background: var(--amber); }
+  .classified-header { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
+  .classified-rule { flex: 1; height: 0.5px; background: rgba(200,132,42,0.25); }
+  .classified-label { font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 7vw, 82px); letter-spacing: 0.06em; line-height: 0.95; color: var(--bone); margin-bottom: 32px; }
+  h1 span { color: var(--amber); }
+  .hero-sub { font-size: 13px; line-height: 1.8; color: var(--muted); max-width: 420px; margin-bottom: 48px; letter-spacing: 0.02em; }
+  .cta { display: inline-block; border: 0.5px solid var(--amber); color: var(--amber); padding: 14px 32px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; }
+  .cta:hover { background: var(--amber); color: var(--field-dark); }
+  .hero-image { position: relative; height: 70vh; overflow: hidden; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .amber-overlay { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: linear-gradient(to top, rgba(200,132,42,0.08), transparent); }
+  .problem { padding: 96px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; border-bottom: 0.5px solid var(--rule); }
+  .stat-block { border-left: 1px solid var(--amber); padding-left: 32px; }
+  .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 96px; color: var(--amber); line-height: 1; letter-spacing: 0.02em; }
+  .stat-unit { font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 8px; }
+  .section-label { font-size: 10px; letter-spacing: 0.2em; color: var(--amber); text-transform: uppercase; margin-bottom: 24px; }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 0.06em; color: var(--bone); margin-bottom: 20px; line-height: 1.05; }
+  p { font-size: 13px; line-height: 1.9; color: var(--muted); letter-spacing: 0.02em; }
+  .gap-callout { margin-top: 32px; padding: 24px 28px; border-left: 2px solid var(--amber); background: rgba(200,132,42,0.04); }
+  .gap-callout p { color: var(--bone); font-size: 13px; line-height: 1.8; }
+  .gap-callout strong { color: var(--amber); font-weight: 400; }
+  .how { padding: 96px 48px; border-bottom: 0.5px solid var(--rule); }
+  .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 56px; }
+  .how-item { border-top: 0.5px solid var(--rule); padding-top: 32px; }
+  .how-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: rgba(200,132,42,0.2); line-height: 1; margin-bottom: 16px; }
+  .how-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.06em; color: var(--bone); margin-bottom: 12px; }
+  .saas-note { margin-top: 56px; padding: 24px 32px; border: 0.5px solid var(--rule); display: flex; align-items: flex-start; gap: 20px; }
+  .saas-note-label { font-size: 10px; letter-spacing: 0.18em; color: var(--amber); text-transform: uppercase; white-space: nowrap; padding-top: 2px; }
+  .saas-note-text { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; line-height: 1.8; }
+  .saas-note-text em { color: var(--bone); font-style: normal; }
+  .founder { padding: 96px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; border-bottom: 0.5px solid var(--rule); background: rgba(74,82,64,0.06); }
+  blockquote { font-family: 'DM Mono', monospace; font-size: 15px; line-height: 1.9; color: var(--bone); font-weight: 300; font-style: italic; border-left: 2px solid var(--amber); padding-left: 28px; margin-bottom: 28px; }
+  .founder-name { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.12em; color: var(--amber); }
+  .founder-title { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; margin-top: 4px; }
+  .founder-img { width: 100%; height: 360px; object-fit: cover; display: block; border: 0.5px solid rgba(74,82,64,0.4); }
+  .pov { padding: 96px 48px; text-align: center; border-bottom: 0.5px solid var(--rule); }
+  .pov-bullets { display: flex; justify-content: center; gap: 48px; margin: 32px 0 56px; flex-wrap: wrap; }
+  .pov-bullet { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+  .pov-bullet::before { content: ''; width: 4px; height: 4px; background: var(--amber); border-radius: 50%; display: inline-block; }
+  footer { padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--rule); }
+  .footer-copy { font-size: 10px; color: var(--olive); letter-spacing: 0.1em; }
+  .signal { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: var(--olive); }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding: 0 24px; }
+    .hero-image { height: 50vw; min-height: 280px; }
+    .problem { grid-template-columns: 1fr; gap: 48px; padding: 64px 24px; }
+    .how { padding: 64px 24px; }
+    .how-grid { grid-template-columns: 1fr; }
+    .founder { grid-template-columns: 1fr; padding: 64px 24px; }
+    .pov { padding: 64px 24px; }
+    nav { padding: 20px 24px; }
+    footer { padding: 20px 24px; flex-direction: column; gap: 12px; text-align: center; }
+    h1 { font-size: 52px; }
+    .stat-number { font-size: 72px; }
+    .pov-bullets { gap: 24px; flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wordmark">SOVEREIGN SITE GUARD™</div>
+  <a href="mailto:intelligence@sovereignsiteguard.com">Request a conversation</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="signal-stamp">Signal over noise</div>
+    <div class="classified-header">
+      <div class="classified-rule"></div>
+      <div class="classified-label">Post-Event Intelligence — Remote Energy Sites</div>
+      <div class="classified-rule"></div>
+    </div>
+    <h1>YOU KNOW<br>THE ALARM<br><span>FIRED.</span><br>NOW WHAT?</h1>
+    <p class="hero-sub">Post-event video analysis for remote renewable energy sites. Off-cloud. No data leaves your site. Human makes every call.</p>
+    <a class="cta" href="mailto:intelligence@sovereignsiteguard.com">Request a conversation</a>
+  </div>
+  <div class="hero-image">
+    <!-- HENRY: Replace src with real photo path -->
+    <img src="images/henry-field.jpg" alt="Henry van der Berg, Founder — Sovereign Site Guard" class="hero-img">
+    <div class="amber-overlay"></div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="stat-block">
+    <div class="stat-number">$1,100</div>
+    <div class="stat-unit">Average cost per truck roll — TSIA 2025</div>
+  </div>
+  <div>
+    <div class="section-label">The Problem</div>
+    <h2>FALSE ALARMS ARE AN OPEX PROBLEM</h2>
+    <p>Remote solar and wind sites trigger hundreds of alarms. Most are nothing. But you dispatch anyway — because you can't see what actually happened. Sovereign Site Guard tells you what happened, on-site, before anyone moves.</p>
+    <div class="gap-callout">
+      <p>Every major security provider in this space does one thing: <strong>real-time alerting.</strong> Nobody does post-event forensic analysis, off-cloud, without liability exposure. That gap is where Sovereign Site Guard operates — <strong>alongside your existing system, not instead of it.</strong> We are the missing forensic layer your current setup was never designed to include.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="section-label">How It Works</div>
+  <div class="how-grid">
+    <div class="how-item">
+      <div class="how-num">01</div>
+      <div class="how-title">OFF-CLOUD</div>
+      <p>The analysis runs on a box at your site. No frames leave. No embeddings stored. Your data stays yours.</p>
+    </div>
+    <div class="how-item">
+      <div class="how-num">02</div>
+      <div class="how-title">POST-EVENT</div>
+      <p>An alarm fires. We analyse the footage. You get a clear account of what actually happened before you decide anything.</p>
+    </div>
+    <div class="how-item">
+      <div class="how-num">03</div>
+      <div class="how-title">HUMAN IN THE LOOP</div>
+      <p>We deliver forensic clarity. You make every decision. No autonomous dispatch. No liability exposure.</p>
+    </div>
+  </div>
+  <div class="saas-note">
+    <div class="saas-note-label">The Model</div>
+    <div class="saas-note-text">Sovereign Site Guard is a <em>software subscription</em>. We provide the intelligence layer — you own the hardware on site. No capital outlay, no proprietary devices, no lock-in. <em>Works with your existing cameras and monitoring infrastructure.</em></div>
+  </div>
+</section>
+
+<section class="founder">
+  <div>
+    <div class="section-label">The Founder</div>
+    <blockquote>"Thirty years of situational awareness — on film sets, in the bush, tracking poachers with a Malinois at 3am — taught me one thing: clarity saves lives and money. SSG is built on that principle."</blockquote>
+    <div class="founder-name">HENRY VAN DER BERG</div>
+    <div class="founder-title">Founder — Sovereign Site Guard™ | Cape Town</div>
+  </div>
+  <!-- HENRY: Replace src with real field photo -->
+  <img src="images/henry-field-2.jpg" alt="Henry van der Berg in the field" class="founder-img">
+</section>
+
+<section class="pov">
+  <div class="section-label">Proof of Value</div>
+  <h2>ONE SITE. THIRTY DAYS.<br>FULL CLARITY.</h2>
+  <p style="max-width:520px;margin:20px auto 0;font-size:13px;">Start with a scoped PoV on a single site. We demonstrate measurable reduction in unnecessary dispatches using your existing infrastructure. You see the value before you commit to anything.</p>
+  <div class="pov-bullets">
+    <div class="pov-bullet">Works with existing cameras</div>
+    <div class="pov-bullet">Zero cloud dependency</div>
+    <div class="pov-bullet">Full forensic reporting</div>
+    <div class="pov-bullet">SaaS subscription thereafter</div>
+  </div>
+  <a class="cta" href="mailto:intelligence@sovereignsiteguard.com">Request a conversation</a>
+</section>
+
+<footer>
+  <div class="wordmark">SOVEREIGN SITE GUARD™</div>
+  <div class="footer-copy">© 2026 Sovereign Site Guard. All rights reserved.</div>
+  <div class="signal">SIGNAL OVER NOISE.</div>
+</footer>
+
+</body>
+</html>
