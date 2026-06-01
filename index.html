@@ -39,7 +39,7 @@
   .cta { display: inline-block; border: 0.5px solid var(--amber); color: var(--amber); padding: 14px 32px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; }
   .cta:hover { background: var(--amber); color: var(--field-dark); }
   .hero-image { position: relative; height: 70vh; overflow: hidden; }
-  .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
   .amber-overlay { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: linear-gradient(to top, rgba(200,132,42,0.08), transparent); }
   .problem { padding: 96px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; border-bottom: 0.5px solid var(--rule); }
   .stat-block { border-left: 1px solid var(--amber); padding-left: 32px; }
@@ -64,7 +64,7 @@
   blockquote { font-family: 'DM Mono', monospace; font-size: 15px; line-height: 1.9; color: var(--bone); font-weight: 300; font-style: italic; border-left: 2px solid var(--amber); padding-left: 28px; margin-bottom: 28px; }
   .founder-name { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.12em; color: var(--amber); }
   .founder-title { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; margin-top: 4px; }
-  .founder-img { width: 100%; height: 360px; object-fit: cover; display: block; border: 0.5px solid rgba(74,82,64,0.4); }
+  .founder-img { width: 100%; height: 360px; object-fit: cover; object-position: top; display: block; border: 0.5px solid rgba(74,82,64,0.4); }
   .pov { padding: 96px 48px; text-align: center; border-bottom: 0.5px solid var(--rule); }
   .pov-bullets { display: flex; justify-content: center; gap: 48px; margin: 32px 0 56px; flex-wrap: wrap; }
   .pov-bullet { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
@@ -108,7 +108,6 @@
     <a class="cta" href="mailto:intelligence@sovereignsiteguard.com">Request a conversation</a>
   </div>
   <div class="hero-image">
-    <!-- HENRY: Replace src with real photo path -->
     <img src="images/henry-field.png" alt="Henry van der Berg, Founder — Sovereign Site Guard" class="hero-img">
     <div class="amber-overlay"></div>
   </div>
@@ -161,7 +160,6 @@
     <div class="founder-name">HENRY VAN DER BERG</div>
     <div class="founder-title">Founder — Sovereign Site Guard™ | Cape Town</div>
   </div>
-  <!-- HENRY: Replace src with real field photo -->
   <img src="images/henry-field-2.png" alt="Henry van der Berg in the field" class="founder-img">
 </section>
 
